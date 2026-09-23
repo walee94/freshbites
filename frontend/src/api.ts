@@ -1,6 +1,6 @@
 import type { CartItem } from "./types";
 
-const apiBaseUrl = "http://localhost:3001";
+const apiBaseUrl = (import.meta.env.VITE_API_URL ?? "http://localhost:3001").replace(/\/$/, "");
 
 export async function placeOrder(customer: { customerName: string; phone: string; address: string }, items: CartItem[]): Promise<{ orderId: number; total: number }> {
   const response = await fetch(`${apiBaseUrl}/api/orders`, {
