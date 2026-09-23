@@ -1,0 +1,10 @@
+{
+  "name": "freshbites-food-ordering",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "dev:api": "npm run dev --workspace=backend"
+  }
+}
