@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: freshbites-api
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
