@@ -2,6 +2,7 @@ services:
   - type: web
     name: freshbites-api
     runtime: node
+    repo: https://github.com/walee94/freshbites
     plan: free
     region: singapore
     branch: main
